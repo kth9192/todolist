@@ -4,7 +4,15 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODO_STORAGE = "ToDo";
 
-const todoArray = [];
+let todoArray = [];
+
+/**
+ * TODO: 삭제 버튼 디자인 변경
+ */
+
+function filterFN(toDo) {
+    return toDo.id === 1;
+}
 
 function drawToDo(todoTxt) {
 
@@ -14,6 +22,8 @@ function drawToDo(todoTxt) {
     const newId = todoArray.length + 1;
 
     deleteBtn.innerText = "❌";
+    deleteBtn.addEventListener("click", deleteToDo);
+
     span.innerText = todoTxt;
     li.appendChild(deleteBtn);
     li.appendChild(span);
@@ -31,6 +41,21 @@ function drawToDo(todoTxt) {
 
 function saveToDoList() {
     localStorage.setItem(TODO_STORAGE, JSON.stringify(todoArray));
+}
+
+function deleteToDo(event) {
+
+    const deleteBtn = event.target;
+    const deleteLi = deleteBtn.parentNode;
+
+    toDoList.removeChild(deleteLi);
+    const cleanToDos = todoArray.filter(function (toDo) {
+        return toDo.id !== parseInt(deleteLi.id);
+    });
+    console.log(cleanToDos);
+
+    todoArray = cleanToDos;
+    saveToDoList();
 }
 
 function handleSubmit(event) {

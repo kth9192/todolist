@@ -22,11 +22,12 @@ function drawToDo(todoTxt) {
     const newId = todoArray.length + 1;
 
     deleteBtn.innerText = "❌";
+    deleteBtn.className += "delete";
     deleteBtn.addEventListener("click", deleteToDo);
 
     span.innerText = todoTxt;
-    li.appendChild(deleteBtn);
     li.appendChild(span);
+    li.appendChild(deleteBtn);
     li.id = newId;
 
     toDoList.appendChild(li);

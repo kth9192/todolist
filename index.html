@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width" />
     <title>Momentum clone</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div class="js-clock">
-      <h1>00:00</h1>
+    <div class="central">
+      <div class="js-clock">
+        <h1>00:00</h1>
+        <hr class="intro-divider" />
+      </div>
+
+      <form class="js-nameForm form">
+        <input type="text" placeholder="What is your name?" />
+      </form>
+
+      <h4 class="js-greetings"></h4>
+
+      <form class="js-toDoForm">
+        <input
+          type="text"
+          class="form-text fas fa-tasks"
+          placeholder="&#xf0ae; Write a to do"
+        />
+      </form>
+
+      <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+
+      <ul class="js-toDoList"></ul>
     </div>
-
-    <form class="js-nameForm form">
-      <input type="text" placeholder="What is youre name?" />
-    </form>
-
-    <h4 class="js-greetings js-greetings"></h4>
-
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-
-    <ul class="js-toDoList"></ul>
-
     <span class="js-weather"></span>
 
     <script src="js/apikey.js"></script>

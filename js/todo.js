@@ -19,15 +19,25 @@ function drawToDo(todoTxt) {
     const li = document.createElement("li");
     const deleteBtn = document.createElement("button");
     const span = document.createElement("span");
+    const chkBox = document.createElement("input");
     const newId = todoArray.length + 1;
 
-    deleteBtn.innerText = "❌";
+    const icon = document.createElement("i");
+    icon.className += "far fa-trash-alt";
+
+    deleteBtn.appendChild(icon);
     deleteBtn.className += "delete";
     deleteBtn.addEventListener("click", deleteToDo);
 
+    chkBox.type = "checkbox";
+    chkBox.className += "check";
+
     span.innerText = todoTxt;
+
     li.appendChild(span);
+    li.appendChild(chkBox);
     li.appendChild(deleteBtn);
+
     li.id = newId;
 
     toDoList.appendChild(li);
